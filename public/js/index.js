@@ -11,8 +11,3 @@ socket.on('disconnect', () => {
 socket.on('newMessage', (message) => {
   console.log(`Message from ${message.from}:`, message.text);  
 });
-
-socket.emit('createMessage', {
-  from: 'Jérôme too',
-  text: 'this is a message from client to server'
-});
