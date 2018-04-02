@@ -57,9 +57,21 @@ describe('Users', () => {
     expect(res.name).toBe('Julie');
   });
 
-  it('should return undefined if user id not found', () => {
+  it('should return undefined if user id not found by id', () => {
     const id = '5';
     const res = users.getUser(id);
+    expect(res).toBe(undefined);
+  });
+  
+  it('should return a user by name', () => {
+    const name = 'Jen';
+    const res = users.getUserByName(name);
+    expect(res.id).toBe('2');
+  });
+
+  it('should return undefined if user not found by id', () => {
+    const name = 'James';
+    const res = users.getUserByName(name);
     expect(res).toBe(undefined);
   });
 

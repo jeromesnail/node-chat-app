@@ -1,6 +1,6 @@
 const expect = require('expect');
 
-const { isRealString } = require('./validation');
+const { isRealString, toTitleCase } = require('./validation');
 
 describe('isRealString', () => {
   it('should return true if valid string', () => {
@@ -16,5 +16,14 @@ describe('isRealString', () => {
   it('should return false if invalid string', () => {
     const res = isRealString({ prout: 'this is a string' });
     expect(res).toBe(false);
+  });
+});
+
+
+describe('toTitleCase', () => {
+  it('should format text correctly', () =>{
+    const text = 'title cAse';
+    res = toTitleCase(text);
+    expect(res).toBe('Title Case');
   });
 });
